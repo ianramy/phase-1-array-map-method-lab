@@ -11,6 +11,16 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+/**
+* Converts an array of tutorial names to title case.
+* 
+* @return {Array} - Array of tutorial names in title case.
+*/
+function titleCased() {
+  return tutorials.map(tutorial => {
+      return tutorial
+          .split(' ')
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+          .join(' ');
+  });
 }
